@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}Registration Form{% endblock %}
+{% block content %}
+	<div class="well"><center><h1>Please Register!</h1></center></div>
+	
+	<form action="/accounts/register/" method="POST">
+		{% csrf_token %}		
+		{{ form|bootstrap }}
+		<input type="submit" value="Register" class="btn btn-primary">
+	</form>
+{% endblock %}	
