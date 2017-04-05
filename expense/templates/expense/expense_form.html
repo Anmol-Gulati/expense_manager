@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Your Expense!</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="panel panel-default">
+		<div class="panel-body"><center><h1>Add Your Expense Here:</h1></center></div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<form>
+					<div class="form-group">
+						<label for="category">Category:</label>
+						<select class="form-control" id="category">
+							<option>Food</option>
+							<option>Accommodation</option>
+							<option>Entertainment</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<textarea class="form-control" rows="5" id="description"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="amount">Amount:</label>
+						<input type="number" class="form-control" id="amount">
+					</div>
+					<button type="submit" class="btn btn-primary">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
