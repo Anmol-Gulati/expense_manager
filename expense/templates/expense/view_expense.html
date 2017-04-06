@@ -12,7 +12,12 @@
 </head>
 <body ng-controller="PieCtrl">
 	<div class="panel panel-default">
-		<div class="panel-body"><center><h1>Your Expenses:</h1></center></div>
+		<div class="panel-body">
+			<a href="{% url 'expense:add_expense' %}"><button type="submit" class="btn btn-primary">Add Expense!</button></a>
+			<center>
+				<h1>Your Expenses:</h1>
+			</center>
+		</div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">

@@ -22,7 +22,7 @@ def login_view(request):
 		user = authenticate(username=username, password=password)
 		if user is not None:
 			login(request, user)
-			return HttpResponseRedirect('/welcome')
+			return HttpResponseRedirect('/expense/view_expense')
 		error = "Invalid Credentials"
 		return render(request, 'accounts/login.html', {'error': error})			
 

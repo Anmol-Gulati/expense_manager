@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^expense/', include('expense.urls', namespace='expense')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'welcome/$', views.welcome_view, name='welcome'),
+    url(r'^$', views.home_view, name='home'),
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
     url(r'^api/v1/expenses/', include('expense.urls', namespace='expenses')),
