@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html ng-app="app">
+<head>
+	<title>View Your Expense!</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript" src="{% static 'expense/js/angular-chart.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'expense/js/app.js' %}"></script>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="PieCtrl">
+	<div class="panel panel-default">
+		<div class="panel-body"><center><h1>Your Expenses:</h1></center></div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2 col-lg-offset-5">
+				<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+				</canvas>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
