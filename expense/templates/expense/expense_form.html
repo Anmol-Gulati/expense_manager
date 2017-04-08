@@ -1,17 +1,13 @@
+{% extends 'base.html' %}
 <!DOCTYPE html>
 {% load static from staticfiles %}
+	{% block title %}Add Your Expense!!{% endblock %}
+	{% block tags %}
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  		<script type="text/javascript" src="{% static 'expense/js/app1.js' %}"></script>
+	{% endblock %}
+{% block content %}
 <html ng-app="add">
-<head>
-	<title>Add Your Expense!</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<link rel="stylesheet" type="text/css" href="{% static 'expense/css/1.css' %}">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-  	<script type="text/javascript" src="{% static 'expense/js/app1.js' %}"></script>
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 <body ng-controller="myCtrl">
 	{% if success_message %}
 		<div class="alert alert-success alert-dismissable fade in">
@@ -21,7 +17,6 @@
 	{% endif %}	
 	<div class="panel panel-default">
 		<div class="panel-body">
-			<a href="{% url 'expense:view_expense' %}"><button type="submit" class="btn btn-primary">View Expenses!</button></a>
 			<center>
 				<h1>Add Your Expense Here:</h1>
 			</center>
@@ -61,4 +56,5 @@
 	</div>
 </div>
 </body>
+{% endblock %}
 </html>

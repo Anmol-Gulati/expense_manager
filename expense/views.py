@@ -31,7 +31,7 @@ def add_expense(request):
 	return render(request, 'expense/expense_form.html')
 
 
-
+@login_required
 def view_expense(request):
 	return render(request, 'expense/view_expense.html')
 
