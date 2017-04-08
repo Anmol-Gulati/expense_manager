@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+{% load static from staticfiles %}
+<html ng-app="add">
 <head>
 	<title>Add Your Expense!</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'expense/css/1.css' %}">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  	<script type="text/javascript" src="{% static 'expense/js/app1.js' %}"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-controller="myCtrl">
 	{% if success_message %}
 		<div class="alert alert-success alert-dismissable fade in">
 			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -27,14 +32,20 @@
 			<div class="col-lg-2 col-lg-offset-5">
 				<form method="POST" action="/expense/add/">
 				{% csrf_token %}
-					<div class="form-group">
+					<div class="form-group" ng-if="!custom">
 						<label for="category">Category:</label>
 						<select class="form-control" id="category" name="category">
 							<option>Food</option>
 							<option>Accommodation</option>
 							<option>Entertainment</option>
 						</select>
+						<center>---OR---</center>
+						<button class="btn" type="button" ng-click="Custom()"><strong>+</strong> Add your custom category!</button>
 					</div>
+					<div class="input-group custom" ng-if="custom">
+					    <span class="input-group-addon">Add Your Category:</span>
+					    <input id="custom_category" type="text" class="form-control" name="category" placeholder="Add Your Custom Category">
+  					</div>
 					<div class="form-group">
 						<label for="description">Description:</label>
 						<textarea class="form-control" rows="5" id="description" name="description"></textarea>

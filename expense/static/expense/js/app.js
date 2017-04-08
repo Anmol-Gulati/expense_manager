@@ -10,5 +10,4 @@ app.controller("PieCtrl", function ($scope, $http) {
         	$scope.data.push($scope.expense[i].amount);
         }      
     });
-});
-              
+});          
