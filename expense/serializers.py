@@ -3,11 +3,12 @@ from rest_framework import serializers
 from . import models
 
 
-class ExpenseSerializer(serializers.ModelSerializer):
+class AmountSerializer(serializers.ModelSerializer):
 	class Meta:
 		fields = (
 			'category',
 			'amount',
-			'description'
+			'description',
+			'created_at'
 		)
-		model = models.Expense
+		model = models.Amount

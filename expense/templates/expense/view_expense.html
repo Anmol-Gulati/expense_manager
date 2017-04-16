@@ -20,12 +20,28 @@
 	</div>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-lg-2 col-lg-offset-5">
+			<div class="col-lg-2 col-lg-offset-2" ng-controller="ListCtrl">
+				<h3 class="well">Total List Of Expenses:</h3>
+				<ul class="list-group">
+				  <li class="list-group-item" ng-repeat="x in expense">{[{ x.description }]} : Rs.{[{ x.amount }]}</li>
+				</ul>
+			</div>
+			<div class="col-lg-2 col-lg-offset-3">
+				<h3 class="well">Pie Chart with Category-Based Expenses:</h3>
 				<canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
 				</canvas>
 			</div>
 		</div>
-	</div>	
+		</br>
+		</br>
+		</br>
+		<div class="row">
+			<div class="col-lg-5 col-sm-12 col-lg-offset-3 col-sm-offset-0" ng-controller="BarCtrl">
+				<h3 class="well">Bar Graph with Day-Wise Expenses:</h3>
+				<canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-options="options">
+				</canvas>
+			</div>	
+		</div>	
 </body>
 </html>
 {% endblock %}
